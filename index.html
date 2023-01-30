@@ -23,10 +23,11 @@
         <script>
 
             $(document).ready(function () {
-                var homeButton = document.querySelector("#home-link");
-                var productsButton = document.querySelector("#products-link");
-                var aboutButton = document.querySelector("#about-link");
-                var contactButton = document.querySelector("#contact-link");
+                const homeButton = document.querySelector("#home-link");
+                const productsButton = document.querySelector("#products-link");
+                const aboutButton = document.querySelector("#about-link");
+                const contactButton = document.querySelector("#contact-link");
+				const pageContainer = document.getElementById("page-container");
 
                 homeButton.addEventListener("click", navigateToHome);
                 productsButton.addEventListener("click", navigateToProducts);
@@ -35,41 +36,63 @@
             });
 
             function navigateToHome(event) {
-                $("#page-container").empty();
-                $("#page-container").load("main.html");
+				pageContainer.style.transition = "opacity 0.5s ease-in-out";
+			    pageContainer.style.opacity = 0;
+			    
+			    setTimeout(function() {
+			    
+			    	$("#page-container").empty();
+			    	$("#page-container").load("main.html");
+			    	
+			    	pageContainer.style.opacity = 1;
+			    }, 500);
+			    
                 event.preventDefault();
             }
 
-            function navigateToProducts(event) {
-			
-				const pageContainer = document.getElementById("page-container");
-			
+            function navigateToProducts(event) {		
 				pageContainer.style.transition = "opacity 0.5s ease-in-out";
 				pageContainer.style.opacity = 0;
+				
 				setTimeout(function() {
 				
 					$("#page-container").empty();
 					$("#page-container").load("products.html");
 					
-				
 					pageContainer.style.opacity = 1;
 				}, 500);
 				
-
 				event.preventDefault();
-				
             }
 
             function navigateToAbout(event) {
-                $("#page-container").empty();
-                $("#page-container").load("about.html");
+				pageContainer.style.transition = "opacity 0.5s ease-in-out";
+				pageContainer.style.opacity = 0;
+				
+				setTimeout(function() {
+				
+					$("#page-container").empty();
+					$("#page-container").load("about.html");
+					
+					pageContainer.style.opacity = 1;
+				}, 500);
+				
                 event.preventDefault();
             }
 
             function navigateToContact(event) {
-                $("#page-container").empty();
-                $("#page-container").load("contact.html");
-                event.preventDefault();
+				pageContainer.style.transition = "opacity 0.5s ease-in-out";
+				pageContainer.style.opacity = 0;
+				
+				setTimeout(function() {
+			    
+			    	$("#page-container").empty();
+			    	$("#page-container").load("contact.html");
+			    	
+			    	pageContainer.style.opacity = 1;
+			    }, 500);
+			    
+			    event.preventDefault();
             }
 
         </script>
