@@ -42,15 +42,17 @@
 
             function navigateToProducts(event) {
 			
-				$("#page-container").style.transition = "opacity 0.5s ease-in-out";
-				$("#page-container").style.opacity = 0;
+				const pageContainer = document.getElementById("page-container");
+			
+				pageContainer.style.transition = "opacity 0.5s ease-in-out";
+				pageContainer.style.opacity = 0;
 				setTimeout(function() {
 				
 					$("#page-container").empty();
 					$("#page-container").load("products.html");
 					
 				
-					$("#page-container").style.opacity = 1;
+					pageContainer.style.opacity = 1;
 				}, 500);
 				
 
