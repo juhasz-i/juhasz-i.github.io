@@ -21,13 +21,14 @@
         </div>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script>
+		
+			const pageContainer = document.getElementById("page-container");
 
             $(document).ready(function () {
                 const homeButton = document.querySelector("#home-link");
                 const productsButton = document.querySelector("#products-link");
                 const aboutButton = document.querySelector("#about-link");
                 const contactButton = document.querySelector("#contact-link");
-				const pageContainer = document.getElementById("page-container");
 
                 homeButton.addEventListener("click", navigateToHome);
                 productsButton.addEventListener("click", navigateToProducts);
