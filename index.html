@@ -37,6 +37,7 @@
             });
 
             function navigateToHome(event) {
+				const pageContainer = document.getElementById("page-container");
 				pageContainer.style.transition = "opacity 0.5s ease-in-out";
 			    pageContainer.style.opacity = 0;
 			    
@@ -51,7 +52,8 @@
                 event.preventDefault();
             }
 
-            function navigateToProducts(event) {		
+            function navigateToProducts(event) {
+				const pageContainer = document.getElementById("page-container");
 				pageContainer.style.transition = "opacity 0.5s ease-in-out";
 				pageContainer.style.opacity = 0;
 				
@@ -67,6 +69,7 @@
             }
 
             function navigateToAbout(event) {
+				const pageContainer = document.getElementById("page-container");
 				pageContainer.style.transition = "opacity 0.5s ease-in-out";
 				pageContainer.style.opacity = 0;
 				
@@ -82,6 +85,7 @@
             }
 
             function navigateToContact(event) {
+				const pageContainer = document.getElementById("page-container");
 				pageContainer.style.transition = "opacity 0.5s ease-in-out";
 				pageContainer.style.opacity = 0;
 				
