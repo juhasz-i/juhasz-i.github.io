@@ -41,9 +41,21 @@
             }
 
             function navigateToProducts(event) {
-                $("#page-container").empty();
-                $("#page-container").load("products.html");
-                event.preventDefault();
+			
+				$("#page-container").style.transition = "opacity 0.5s ease-in-out";
+				$("#page-container").style.opacity = 0;
+				setTimeout(function() {
+				
+					$("#page-container").empty();
+					$("#page-container").load("products.html");
+					
+				
+					$("#page-container").style.opacity = 1;
+				}, 500);
+				
+
+				event.preventDefault();
+				
             }
 
             function navigateToAbout(event) {
