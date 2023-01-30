@@ -1,1 +1,64 @@
-Hello World
+<html>
+  <head>
+    <title>My Display</title>
+    <style>
+body {
+  background-color: lightgray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  justify-content: space-between;
+}
+
+#display-text {
+  font-size: 72px;
+  color: black;
+  text-align: center;
+  font-family: "Helvetica Neue", sans-serif;
+}
+
+input[type="text"] {
+  font-size: 24px;
+  padding: 10px;
+  margin: 20px 0;
+  text-align: center;
+  width: 40%;
+}
+
+button {
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 150px;
+  height: 50px;
+  transition: background-color 0.2s ease-out;
+}
+
+button:hover {
+  background-color: darkgreen;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+    </style>
+  </head>
+  <body>
+    <div id="display-text"></div>
+    <input type="text" id="input-text">
+    <button id="push-me-button">Push Me</button>
+    <script>
+      const pushMeButton = document.getElementById("push-me-button");
+      const inputText = document.getElementById("input-text");
+      const displayText = document.getElementById("display-text");
+
+      pushMeButton.addEventListener("click", function () {
+        displayText.innerHTML = inputText.value;
+      });
+    </script>
+  </body>
+</html>
