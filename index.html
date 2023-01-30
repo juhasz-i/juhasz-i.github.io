@@ -1,64 +1,64 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>My Display</title>
-    <style>
-body {
-  background-color: lightgray;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100vh;
-  justify-content: space-between;
-}
 
-#display-text {
-  font-size: 72px;
-  color: black;
-  text-align: center;
-  font-family: "Helvetica Neue", sans-serif;
-}
+    <head>
+        <title>My Website</title>
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.cdnfonts.com/css/teleneo-office" rel="stylesheet">
+    </head>
 
-input[type="text"] {
-  font-size: 24px;
-  padding: 10px;
-  margin: 20px 0;
-  text-align: center;
-  width: 40%;
-}
+    <body>
+        <div id="navbar">
+            <a id="home-link" href="#index">Home</a>
+            <a id="products-link" href="#products">My Products</a>
+            <a id="about-link" href="#about">About Myself</a>
+            <a id="contact-link" href="#contact">Contact Details</a>
+        </div>
+        <div id="page-container"></div>
+        <div id="footer">
+            <p>Contact Details: email@example.com | 555-555-5555</p>
+            <p>Terms of Use | Privacy Policy</p>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
 
-button {
-  background-color: green;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 150px;
-  height: 50px;
-  transition: background-color 0.2s ease-out;
-}
+            $(document).ready(function () {
+                var homeButton = document.querySelector("#home-link");
+                var productsButton = document.querySelector("#products-link");
+                var aboutButton = document.querySelector("#about-link");
+                var contactButton = document.querySelector("#contact-link");
 
-button:hover {
-  background-color: darkgreen;
-}
+                homeButton.addEventListener("click", navigateToHome);
+                productsButton.addEventListener("click", navigateToProducts);
+                aboutButton.addEventListener("click", navigateToAbout);
+                contactButton.addEventListener("click", navigateToContact);
+            });
 
-button:active {
-  transform: scale(0.95);
-}
+            function navigateToHome(event) {
+                $("#page-container").empty();
+                $("#page-container").load("main.html");
+                event.preventDefault();
+            }
 
-    </style>
-  </head>
-  <body>
-    <div id="display-text"></div>
-    <input type="text" id="input-text">
-    <button id="push-me-button">Push Me</button>
-    <script>
-      const pushMeButton = document.getElementById("push-me-button");
-      const inputText = document.getElementById("input-text");
-      const displayText = document.getElementById("display-text");
+            function navigateToProducts(event) {
+                $("#page-container").empty();
+                $("#page-container").load("products.html");
+                event.preventDefault();
+            }
 
-      pushMeButton.addEventListener("click", function () {
-        displayText.innerHTML = inputText.value;
-      });
-    </script>
-  </body>
+            function navigateToAbout(event) {
+                $("#page-container").empty();
+                $("#page-container").load("about.html");
+                event.preventDefault();
+            }
+
+            function navigateToContact(event) {
+                $("#page-container").empty();
+                $("#page-container").load("contact.html");
+                event.preventDefault();
+            }
+
+        </script>
+    </body>
+
 </html>
