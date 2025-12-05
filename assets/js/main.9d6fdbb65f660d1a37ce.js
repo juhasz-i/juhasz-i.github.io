@@ -184,13 +184,25 @@
             }, this.lastPinchDistance = null, this.animationFrame = null, this.lastTimestamp = 0, this.damping = .92, this.maxVelocity = 40, this.handlePointerDown = this.handlePointerDown.bind(this), this.handlePointerMove = this.handlePointerMove.bind(this), this.handlePointerUp = this.handlePointerUp.bind(this), this.animate = this.animate.bind(this)
         }
 
+        /*
         mount() {
             this.grid.addEventListener("pointerdown", this.handlePointerDown), this.grid.addEventListener("pointermove", this.handlePointerMove), this.grid.addEventListener("pointerup", this.handlePointerUp), this.grid.addEventListener("pointercancel", this.handlePointerUp), this.grid.addEventListener("touchmove", t => this.handleTouchPinch(t), {passive: !0}), this.grid.addEventListener("touchend", () => {
                 this.lastPinchDistance = null
             }), window.addEventListener("resize", () => {
                 this.measureCell(), this.renderTiles()
             }), "ResizeObserver" in window && (this.resizeObserver = new ResizeObserver(() => this.buildTiles()), this.resizeObserver.observe(this.grid)), this.buildTiles()
+       // }
+        */
+
+        mount() {
+            this.grid.addEventListener("pointerdown", this.handlePointerDown), this.grid.addEventListener("pointermove", this.handlePointerMove), this.grid.addEventListener("pointerup", this.handlePointerUp), this.grid.addEventListener("pointercancel", this.handlePointerUp), this.grid.addEventListener("touchmove", t => this.handleTouchPinch(t), {passive: !0}), this.grid.addEventListener("touchend", () => {
+                this.lastPinchDistance = null
+            }), window.addEventListener("resize", () => {
+                this.measureCell(), this.renderTiles()
+            })
         }
+
+        
 
         buildTiles() {
             const {clientWidth: t, clientHeight: e} = this.grid, i = Math.ceil(t / this.cellSize), s = Math.ceil(e / this.cellSize), n = Math.max(27, 9 * i),
