@@ -1,108 +1,37 @@
-<!DOCTYPE html>
-<html>
-
-    <head>
-        <title>My Website</title>
-        <link rel="stylesheet" href="styles.css">
-        <link href="https://fonts.cdnfonts.com/css/teleneo-office" rel="stylesheet">
-    </head>
-
-    <body>
-        <div id="navbar">
-            <a id="home-link" href="#index">Home</a>
-            <a id="products-link" href="#products">My Products</a>
-            <a id="about-link" href="#about">About Myself</a>
-            <a id="contact-link" href="#contact">Contact Details</a>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>VARGA KRISTÓF | Szakmai Portfólió</title>
+    <meta name="description" content="Néhány príma matéria"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet"/>
+    <script defer="defer" src="./assets/js/main.9d6fdbb65f660d1a37ce.js"></script>
+</head>
+<body>
+<div class="page">
+    <header class="site-header">
+        <div class="brand" aria-label="VARGA KRISTÓF"><span>VARGA KRISTÓF</span></div>
+        <nav aria-label="Primary"><a href="#grid" class="nav-link" data-nav="gallery">Munkáim</a><a href="#contact-page" class="nav-link" data-nav="contact">Kapcsolat</a>
+        </nav>
+    </header>
+    <main class="gallery-shell" id="about" data-page="gallery">
+        <div class="gallery-scroll" role="region" aria-label="Munkáim">
+            <div class="gallery-grid" id="grid" data-grid></div>
         </div>
-        <div id="page-container"></div>
-        <div id="footer">
-            <p>Contact Details: email@example.com | 555-555-5555</p>
-            <p>Terms of Use | Privacy Policy</p>
+    </main>
+    <section class="contact-page" id="contact-page" data-page="contact">
+        <div class="contact-content"><h1>Kapcsolat</h1>
+            <div class="contact-info"><p><a href="mailto:<valami@email.cím>">&ltvalami@email.cím&gt</a></p>
+                <p><a href="tel:<+36903000000>">&lt+36 90 300 0000&gt</a></p></div>
         </div>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script>
-
-		
-	    	const pageContainer = document.getElementById("page-container");
-
-
-            $(document).ready(function () {
-                const homeButton = document.querySelector("#home-link");
-                const productsButton = document.querySelector("#products-link");
-                const aboutButton = document.querySelector("#about-link");
-                const contactButton = document.querySelector("#contact-link");
-
-                homeButton.addEventListener("click", navigateToHome);
-                productsButton.addEventListener("click", navigateToProducts);
-                aboutButton.addEventListener("click", navigateToAbout);
-                contactButton.addEventListener("click", navigateToContact);
-            });
-
-            function navigateToHome(event) {
-				const pageContainer = document.getElementById("page-container");
-				pageContainer.style.transition = "opacity 0.5s ease-in-out";
-			    pageContainer.style.opacity = 0;
-			    
-			    setTimeout(function() {
-			    
-			    	$("#page-container").empty();
-			    	$("#page-container").load("main.html");
-			    	
-			    	pageContainer.style.opacity = 1;
-			    }, 500);
-			    
-                event.preventDefault();
-            }
-
-            function navigateToProducts(event) {
-				const pageContainer = document.getElementById("page-container");
-				pageContainer.style.transition = "opacity 0.5s ease-in-out";
-				pageContainer.style.opacity = 0;
-				
-				setTimeout(function() {
-				
-					$("#page-container").empty();
-					$("#page-container").load("products.html");
-					
-					pageContainer.style.opacity = 1;
-				}, 500);
-				
-				event.preventDefault();
-            }
-
-            function navigateToAbout(event) {
-				const pageContainer = document.getElementById("page-container");
-				pageContainer.style.transition = "opacity 0.5s ease-in-out";
-				pageContainer.style.opacity = 0;
-				
-				setTimeout(function() {
-				
-					$("#page-container").empty();
-					$("#page-container").load("about.html");
-					
-					pageContainer.style.opacity = 1;
-				}, 500);
-				
-                event.preventDefault();
-            }
-
-            function navigateToContact(event) {
-				const pageContainer = document.getElementById("page-container");
-				pageContainer.style.transition = "opacity 0.5s ease-in-out";
-				pageContainer.style.opacity = 0;
-				
-				setTimeout(function() {
-			    
-			    	$("#page-container").empty();
-			    	$("#page-container").load("contact.html");
-			    	
-			    	pageContainer.style.opacity = 1;
-			    }, 500);
-			    
-			    event.preventDefault();
-            }
-
-        </script>
-    </body>
-
+    </section>
+    <footer class="site-footer" id="contact">
+        <div><p>VARGA KRISTÓF | Szakmai Portfólió</p>
+            <p><a href="mailto:<valami@email.cím>">&ltvalami@email.cím&gt</a></p></div>
+        <p>© <span id="year"></span> Príma matéria</p></footer>
+</div>
+</body>
 </html>
